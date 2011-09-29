@@ -1,0 +1,10 @@
+<h2>Los Participantes</h2>
+<table>
+<% @users.each do |user| %>
+  <tr>
+	<td><%= user.nombre %></td>
+	<td><%= link_to user.email, "mailto:#{user.email}"%></td>
+	<td><%= user.amigo ? "Ya eligio" : "No ha elegido" %></td>
+  </tr>
+<% end %>
+</table>

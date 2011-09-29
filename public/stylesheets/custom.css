@@ -1,0 +1,125 @@
+body {
+  /* Gradient curtesy of 
+     http://www.colorzilla.com/gradient-editor/
+     Source: http://www.colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+15,b5c6d0+71,e0eff9+100;Blue+Gloss+Default
+  */
+  background: rgb(242,246,248); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 15%, rgba(181,198,208,1) 71%, rgba(224,239,249,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(242,246,248,1)), color-stop(15%,rgba(216,225,231,1)), color-stop(71%,rgba(181,198,208,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 15%,rgba(181,198,208,1) 71%,rgba(224,239,249,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 15%,rgba(181,198,208,1) 71%,rgba(224,239,249,1) 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 15%,rgba(181,198,208,1) 71%,rgba(224,239,249,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 15%,rgba(181,198,208,1) 71%,rgba(224,239,249,1) 100%); /* W3C */
+}
+
+header {}
+footer { padding-top: 20px; }
+section { background: #fff; }
+
+.container {
+  width:990px;
+  height:500px;
+  margin-top: 20px;
+  padding:20px;
+  background: #ffffff;
+}
+
+/* Round corners */
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+/* Navigation */
+nav {
+  float: right;
+  background: white;
+  padding: 0 0.7em;
+  white-space: nowrap;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+nav ul li a:visited { color: #09c; }
+nav ul li a:hover { text-decoration: underline; } 
+
+
+.pagination  {}
+.pagination a {text-decoration:none; background-color:#F0F0F0; padding:5px;}
+.pagination a:hover {text-decoration:underline;}
+
+/* Character */
+.character-compact {
+	clear:both;
+	background-color:#FFF2E1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #866B26;
+	padding: 10px;
+}
+
+/* Item */
+.item-compact {
+	clear:both;
+	padding: 10px;
+}
+
+.outfit {background:#8F8F8F; color: #fff;} 
+.outfit tbody tr:nth-child(even) td, .outfit tbody tr.even td {background:#9B9B9B;}
+.outfit th {background:#444444;}
+.outfit th a {color: #ffffff;}
+
+.info-compact {
+	padding: 10px;
+	margin-left: 40px;
+}
+
+.tooltip_border {
+  /*background: transparent url('http://ulminia.wowroster.net/images/shader.png') repeat;*/
+  background-color: rgba(48,48,48, 200);
+  border: 2px outset #CCCCCC;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: #ffffff;
+  font: verdana, arial, helvetica, sans-serif;
+  padding: 10px;
+}
+
+.item a {text-decoration:none;}
+.item a:hover {text-decoration:underline;}
+
+.Poor, .Poor a, .Poor a:hover, .Poor a:visited, .Poor a:focus {  color: #9D9D9D; }
+.Common, .Common a, .Common a:hover, .Common a:visited, .Common a:focus { color: #FFFFFF; }
+.Uncommon, .Uncommon a, .Uncommon a:hover, .Uncommon a:visited, .Uncommon a:focus { color: #1EFF00; }
+.Rare, .Rare a, .Rare a:hover, .Rare a:visited, .Rare a:focus{ color: #0070DD; }
+.Epic, .Epic a, .Epic a:hover, .Epic a:visited, .Epic a:focus { color: #A335EE; }
+.Legendary, .Legendary a, .Legendary a:hover, .Legendary a:visited, .Legendary a:focus{ color: #FF8000; }
+.Artifact, .Artifact a, .Artifact a:hover, .Artifact a:visited, .Artifact a:focus { color: #E5CC80; }
+.Heirloom , .Heirloom a, .Heirloom a:hover, .Heirloom a:visited, .Heirloom a:focus{ color: #E5CC80; }
+
+.item_small {
+  clear: both; 
+  margin: 5px;
+  background: #9B9B9B;	
+  font: verdana, arial, helvetica, sans-serif;
+  padding: 10px;
+}
+.below { border: 3px solid #FF4940; }
+.same { border: 3px solid #FFFFFF; }
+.above { border: 3px solid #39E24D; }
