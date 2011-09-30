@@ -12,6 +12,28 @@ class User < ActiveRecord::Base
     self.update_attributes(:amigo => amigo.id)
   end
   
+  def self.shuffle
+    users = User.all
+    amigos = User.all
+    sentinel = true
+    
+    while sentinel
+      amigos.shuffle!
+      same = false
+      users.each_with_index do |user, index|
+        if user.id == amigos[index].id
+          same = true
+          break
+        end
+      end
+      sentinel = same
+    end
+
+    users.each_with_index do |user, index|
+      user.update_attributes(:amigo => amigos[index].id)
+    end
+  end 
+  
 private
 
   def generate_hash

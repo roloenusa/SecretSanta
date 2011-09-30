@@ -2,6 +2,8 @@ SecretSanta::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  root :to => "users#index"
+  match 'shuffle' => 'users#shuffle'
   resources :users
   
   # Sample of regular route:

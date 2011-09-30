@@ -3,9 +3,15 @@ class UsersController < ApplicationController
   def show
     secreto = params[:id]
     @user = User.find_by_secreto(params[:id])
-    @user.generate_friend unless @user.amigo
     @amigo = User.find(@user.amigo)
     @title = @user.nombre
+  end
+  
+  def shuffle
+    User.shuffle
+    
+    UserMailer.email_link(User.first).deliver
+    redirect_to root_path
   end
   
   def index
