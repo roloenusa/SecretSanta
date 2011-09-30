@@ -46,4 +46,7 @@ SecretSanta::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  # This assumes you're running your local development server on port 3000 via script/server
+  config.action_mailer.default_url_options = { :host => "papanoel.heroku.com" }
 end
