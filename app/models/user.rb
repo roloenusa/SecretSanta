@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
 
     users.each_with_index do |user, index|
       user.update_attributes(:amigo => amigos[index].id)
+      UserMailer.email_link(user).deliver
     end
   end 
   

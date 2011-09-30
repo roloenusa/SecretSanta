@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   
   def shuffle
     User.shuffle
-    UserMailer.email_link(User.first).deliver
     redirect_to root_path
   end
   
