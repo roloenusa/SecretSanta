@@ -1,0 +1,18 @@
+<%= form_for(@user) do |f| %>
+  <div class='field span-4'>
+    <%= f.label :nombre %>
+  </div>	
+  <div class='field span-20 last'>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class='field span-4'>
+	<%= f.label :email %>
+  </div>	
+  <div class='field span-20 last'>  
+	<%= f.text_field :email %>
+  </div>
+  <div class='action'>
+	<%= f.submit 'Aceptar'%>
+  </div>
+
+<% end %>
