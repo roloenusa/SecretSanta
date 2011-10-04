@@ -3,7 +3,7 @@
 <% @users.each do |user| %>
   <tr>
 	<td><%= user.nombre %></td>
-	<td><%= link_to user.email, "mailto:#{user.email}"%></td>
+	<td><% link_to user.email, "mailto:#{user.email}"%></td>
 	<td><%= user.amigo ? "Ya eligio" : "No ha elegido" %></td>
   </tr>
 <% end %>

@@ -5,12 +5,13 @@ class User < ActiveRecord::Base
   
   before_save :generate_hash
   
-  def generate_friend
-    posibilities = User.find(:all, :conditions => ["nombre != ? and escogido = ?", self.nombre, false ])
-    amigo = posibilities.sample
-    amigo.update_attributes(:escogido => true)
-    self.update_attributes(:amigo => amigo.id)
-  end
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+  validates :nombre,  :presence => true,
+                    :length   => { :maximum => 20 }
+  validates :email, :presence => true,
+                    :format   => { :with => email_regex },
+                    :uniqueness => { :case_sensitive => false }
   
   def self.shuffle
     users = User.all
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
       amigos.shuffle!
       same = false
       users.each_with_index do |user, index|
-        if user.id == amigos[index].id
+        if self.rules(user, amigos[index])
           same = true
           break
         end
@@ -34,6 +35,19 @@ class User < ActiveRecord::Base
       UserMailer.email_link(user).deliver
     end
   end 
+  
+  def self.rules(user, amigo)
+    if (user.id == amigo.id) 
+      puts "User id the same"
+      return true
+    elsif (user.nombre.downcase == 'laura' && amigo.nombre.downcase == 'mark') 
+      puts "Laura y Mark"
+      return true
+    elsif (user.nombre.downcase == 'juan' && amigo.nombre.downcase == 'danielle')
+      puts "Juan y Danielle"
+      return true
+    end
+  end
   
 private
 
