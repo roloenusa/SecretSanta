@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<head>
+  	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
     <h1>Bienvenido(a) al Amigo Secreto, <%= @user.nombre %></h1>
     <p>
       Puedes encontrar tu amigo secreto en la siguiente direccion:<br />
-      <%= @url %><br/>
+      <%= @url %><p />
+	  	o click: <%= link_to @url, @url%>
     </p>
     <p>
       Gracias por jugar!</p>

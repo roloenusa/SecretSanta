@@ -4,7 +4,12 @@ SecretSanta::Application.routes.draw do
 
   root :to => "users#index"
   match 'shuffle' => 'users#shuffle'
-  resources :users
+  match 'correo_individual' => 'users#email'
+  resources :users do
+    member do
+      get :email
+    end
+  end
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,0 +1,10 @@
+<h2>Los Participantes</h2>
+<table>
+<% @users.each do |user| %>
+  <tr>
+		<td><%= user.nombre %></td>
+		<td><%= link_to user.email, "mailto:#{user.email}"%></td>
+		<td><%= link_to "email", email_user_path(user.secreto) %></td>
+  </tr>
+<% end %>
+</table>

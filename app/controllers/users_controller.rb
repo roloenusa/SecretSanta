@@ -12,6 +12,15 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
   
+  def email
+    @users = User.all
+    @user = User.find_by_secreto(params[:id])
+    if @user 
+      UserMailer.email_link(@user).deliver
+      flash[:success] = "Email enviado a #{@user.nombre}"
+    end
+  end
+  
   def index
     @users = User.all
   end
