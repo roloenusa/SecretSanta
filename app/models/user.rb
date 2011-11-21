@@ -44,6 +44,9 @@ class User < ActiveRecord::Base
     elsif (user.nombre.downcase == 'laura' && amigo.nombre.downcase == 'mark') 
       puts "Laura y Mark"
       return true
+    elsif (user.nombre.downcase == 'mark' && amigo.nombre.downcase == 'laura') 
+        puts "Laura y Mark"
+        return true
     elsif (user.nombre.downcase == 'juan' && amigo.nombre.downcase == 'danielle')
       puts "Juan y Danielle"
       return true

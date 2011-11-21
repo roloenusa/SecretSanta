@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.find_by_secreto(params[:id])
     if @user 
       UserMailer.email_link(@user).deliver
-      flash[:success] = "Email enviado a #{@user.nombre}"
+      flash.now[:success] = "Email enviado a #{@user.nombre}"
     end
   end
   
